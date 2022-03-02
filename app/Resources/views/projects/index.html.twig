@@ -1,0 +1,15 @@
+<h1>{{ projects|length }} Projects</h1>
+
+{%  for project in projects %}
+    <article>
+        <h2> {{ project.name }} </h2>
+        <p> {{ project.description|truncate(default_truncate_limit) }} </p>
+        <ul>
+            <li><strong>Date</strong>: {{ project.expiredOn|date }}</li>
+            <li><strong>Locatiion</strong>: {{ project.website }}</li>
+            <li><strong>Price</strong>: ${{ project.targetAmount }}</li>
+        </ul>
+    </article>
+{%  endfor %}
+
+
